@@ -1,0 +1,14 @@
+---
+- hosts: [web]
+  become: true
+
+  tasks:
+    - name: stop container
+      shell: docker container stop testcon
+
+    - name: remove container
+      shell: docker container rm testcon
+
+
+    - name: remove image
+      shell: docker image rm -f shahil98/contanier2
